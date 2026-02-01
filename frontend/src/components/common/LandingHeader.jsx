@@ -7,11 +7,11 @@ export default function LandingHeader() {
     const location = useLocation();
 
     const features = [
-        { label: 'LABS', icon: IconSearch, to: '/detection' },
-        { label: 'URLS', icon: IconGlobe, to: '/url-checker' },
-        { label: 'EMAILS', icon: IconTerminal2, to: '/email-analyzer' },
-        { label: 'LEARN', icon: IconBook, to: '/learning' },
-        { label: 'QUIZ', icon: IconTrophy, to: '/quiz' },
+        { label: 'DETECTION LABS', icon: IconSearch, to: '/detection' },
+        { label: 'URL SCANNER', icon: IconGlobe, to: '/url-checker' },
+        { label: 'DETECTION EMAILS', icon: IconTerminal2, to: '/email-analyzer' },
+        { label: 'LEARNING CENTER', icon: IconBook, to: '/learning' },
+        { label: 'KNOWLEDGE QUIZ', icon: IconTrophy, to: '/quiz' },
     ]
 
     return (

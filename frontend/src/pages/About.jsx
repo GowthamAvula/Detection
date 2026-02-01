@@ -5,9 +5,9 @@ import './About.css'
 
 export default function About() {
     const stats = [
-        { label: 'AI Accuracy', value: '98.5%', icon: IconRobot, color: 'cyan' },
-        { label: 'Global Community', value: '10K+', icon: IconUsers, color: 'blue' },
-        { label: 'Scams Prevented', value: '250K+', icon: IconShieldCheck, color: 'teal' },
+        { label: 'AI Detection', value: '98.5%', icon: IconRobot, color: 'cyan' },
+        { label: 'Analysis Speed', value: 'Real-time', icon: IconFingerprint, color: 'blue' },
+        { label: 'Security Model', value: 'Zero-Trust', icon: IconLock, color: 'teal' },
     ]
 
     return (
@@ -84,20 +84,20 @@ export default function About() {
                         </Stack>
 
                         <Paper className="tech-stack-card" p={40}>
-                            <Title order={3} c="white" mb="xl" style={{ letterSpacing: '1px' }}>SYSTEM_ARCHITECTURE</Title>
+                            <Title order={3} c="white" mb="xl" style={{ letterSpacing: '1px' }}>WHY_PHISHGUARD?</Title>
                             <Divider opacity={0.1} mb="xl" />
                             <Stack gap="lg">
                                 <Box>
-                                    <Text size="xs" className="mono-label" c="cyan">NEURAL_ENGINE</Text>
-                                    <Text size="sm" c="dimmed">Leveraging Llama-3 & Groq for real-time semantic analysis.</Text>
+                                    <Text size="xs" className="mono-label" c="cyan">INSTANT_VERIFICATION</Text>
+                                    <Text size="sm" c="dimmed">Stop guessing. Get immediate AI-backed verdicts on suspicious content.</Text>
                                 </Box>
                                 <Box>
-                                    <Text size="xs" className="mono-label" c="cyan">THREAT_INTELLIGENCE</Text>
-                                    <Text size="sm" c="dimmed">Global database of reported phishing vectors and malicious URLs.</Text>
+                                    <Text size="xs" className="mono-label" c="cyan">EDUCATIONAL_EMPOWERMENT</Text>
+                                    <Text size="sm" c="dimmed">We don't just block; we explain. Learn the "why" behind every threat.</Text>
                                 </Box>
                                 <Box>
-                                    <Text size="xs" className="mono-label" c="cyan">SECURE_SYNC</Text>
-                                    <Text size="sm" c="dimmed">Encrypted storage for user reports and scan history via Supabase.</Text>
+                                    <Text size="xs" className="mono-label" c="cyan">COLLABORATIVE_SHIELD</Text>
+                                    <Text size="sm" c="dimmed">Benefit from the collective intelligence of users reporting new scams.</Text>
                                 </Box>
                             </Stack>
                         </Paper>
