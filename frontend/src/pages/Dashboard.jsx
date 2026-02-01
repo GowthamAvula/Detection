@@ -19,6 +19,8 @@ export default function Dashboard() {
             const { data: { user } } = await supabase.auth.getUser()
             if (user?.user_metadata?.full_name) {
                 setUserName(user.user_metadata.full_name)
+            } else if (sessionStorage.getItem('demoMode') === 'true') {
+                setUserName('Demo Sentinel User')
             }
 
             // Get detection counts

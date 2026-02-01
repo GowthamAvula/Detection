@@ -9,11 +9,13 @@ import './Demo.css'
 export default function Demo() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
+    const [isDemo, setIsDemo] = useState(false);
 
     useEffect(() => {
         const checkUser = async () => {
             const { data: { user } } = await supabase.auth.getUser();
             setUser(user);
+            setIsDemo(sessionStorage.getItem('demoMode') === 'true');
         }
         checkUser();
     }, []);
@@ -109,7 +111,7 @@ export default function Demo() {
                         to provide a comprehensive shield against tactical deception.
                     </Text>
 
-                    {user ? (
+                    {hasAccess ? (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -180,7 +182,7 @@ export default function Demo() {
                                         onClick={() => handleAccess(feature.to)}
                                         rightSection={<IconArrowRight size={16} />}
                                     >
-                                        {user ? 'Open Module' : 'Login to Start'}
+                                        {hasAccess ? 'Open Module' : 'Login to Start'}
                                     </Button>
                                 </Paper>
                             </motion.div>

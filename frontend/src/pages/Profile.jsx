@@ -11,17 +11,30 @@ export default function Profile() {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(false)
     const [newPassword, setNewPassword] = useState('')
+    const [isDemo, setIsDemo] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
         const getUser = async () => {
             const { data: { user } } = await supabase.auth.getUser()
-            setUser(user)
+            if (user) {
+                setUser(user)
+            } else if (sessionStorage.getItem('demoMode') === 'true') {
+                setIsDemo(true)
+                setUser({
+                    email: 'demo@sentinel.security',
+                    created_at: new Date().toISOString(),
+                    user_metadata: { full_name: 'Demo Sentinel User' }
+                })
+            }
         }
         getUser()
     }, [])
 
     const handleSignOut = async () => {
+        if (isDemo) {
+            sessionStorage.removeItem('demoMode')
+        }
         await supabase.auth.signOut()
         navigate('/login')
     }
