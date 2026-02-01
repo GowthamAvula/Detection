@@ -24,11 +24,15 @@ export default function TextScanner() {
 
             const data = response.data
             const isSafe = data.label === 'SAFE'
-            const displayScore = isSafe ? (100 - (data.risk_score || 0)) : (data.risk_score || 0)
+
+            // Handle naming conventions and type conversion
+            const rawRisk = data.risk_score !== undefined ? data.risk_score : (data.riskScore !== undefined ? data.riskScore : 0);
+            const riskValue = Number(rawRisk);
+            const displayScore = isSafe ? (100 - riskValue) : riskValue
 
             setResult({
                 safe: isSafe,
-                score: displayScore,
+                score: Math.max(0, Math.min(100, displayScore)),
                 riskLevel: data.label,
                 details: [data.reasons]
             })

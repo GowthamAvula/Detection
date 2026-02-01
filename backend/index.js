@@ -70,7 +70,7 @@ app.post('/api/detect', async (req, res) => {
         Return ONLY valid JSON with:
         {
             "label": "SAFE" | "SUSPICIOUS" | "PHISHING",
-            "risk_score": number (0-100),
+            "risk_score": number (0 to 100, where 0 is perfectly safe and 100 is high risk/confirmed phishing),
             "phishing_type": "string" | "None",
             "reasons": "concise expert reasoning"
         }
@@ -166,7 +166,7 @@ app.post('/api/analyze-image', async (req, res) => {
                             Return ONLY valid JSON with:
                             {
                                 "label": "SAFE" | "SUSPICIOUS" | "PHISHING",
-                                "risk_score": number (0-100),
+                                "risk_score": number (0 to 100, where 0 is perfectly safe and 100 is high risk/confirmed phishing),
                                 "phishing_type": "string" | "None",
                                 "reasons": "concise visual and textual analysis"
                             }`

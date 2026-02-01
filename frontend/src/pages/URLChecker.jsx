@@ -38,13 +38,19 @@ export default function URLChecker() {
             const data = response.data
             const isSafe = data.label === 'SAFE'
 
+            // Get risk score with fallback for different naming conventions
+            const rawRisk = data.risk_score !== undefined ? data.risk_score : (data.riskScore !== undefined ? data.riskScore : 0);
+
+            // Convert to a number in case it's a string
+            const riskValue = Number(rawRisk);
+
             // If safe, safety score is 100 minus the risk score.
             // If dangerous, risk score is displayed as intended.
-            const displayScore = isSafe ? (100 - (data.risk_score || 0)) : (data.risk_score || 0)
+            const displayScore = isSafe ? (100 - riskValue) : riskValue
 
             setResult({
                 safe: isSafe,
-                score: displayScore,
+                score: Math.max(0, Math.min(100, displayScore)), // Clamp between 0-100
                 domain: hostname,
                 threats: isSafe ? [] : [data.reasons || 'Suspicious indicators detected']
             })
