@@ -36,11 +36,17 @@ export default function URLChecker() {
             })
 
             const data = response.data
+            const isSafe = data.label === 'SAFE'
+
+            // If safe, safety score is 100 minus the risk score.
+            // If dangerous, risk score is displayed as intended.
+            const displayScore = isSafe ? (100 - (data.risk_score || 0)) : (data.risk_score || 0)
+
             setResult({
-                safe: data.label === 'SAFE',
-                score: data.risk_score,
+                safe: isSafe,
+                score: displayScore,
                 domain: hostname,
-                threats: data.label === 'SAFE' ? [] : [data.reasons || 'Suspicious indicators detected']
+                threats: isSafe ? [] : [data.reasons || 'Suspicious indicators detected']
             })
 
         } catch (error) {
@@ -109,7 +115,10 @@ export default function URLChecker() {
                                     <Title order={2} c="white" style={{ fontSize: '1.5rem', letterSpacing: '0.5px' }}>
                                         {result.safe ? 'SECURE_LINK' : 'DANGEROUS_LINK'}
                                     </Title>
-                                    <Text size="sm" c="dimmed">Safety Score: <span className="score">{result.score}%</span></Text>
+                                    <Text size="sm" c="dimmed">
+                                        {result.safe ? 'Safety Score: ' : 'Risk Score: '}
+                                        <span className="score">{result.score}%</span>
+                                    </Text>
                                 </div>
                             </div>
 

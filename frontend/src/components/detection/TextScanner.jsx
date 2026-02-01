@@ -23,10 +23,12 @@ export default function TextScanner() {
             })
 
             const data = response.data
+            const isSafe = data.label === 'SAFE'
+            const displayScore = isSafe ? (100 - (data.risk_score || 0)) : (data.risk_score || 0)
 
             setResult({
-                safe: data.label === 'SAFE',
-                score: data.risk_score,
+                safe: isSafe,
+                score: displayScore,
                 riskLevel: data.label,
                 details: [data.reasons]
             })
@@ -84,7 +86,7 @@ export default function TextScanner() {
                             <Title order={3} c="white">{result.safe ? 'SECURE' : 'DANGER'}</Title>
                         </div>
                         <div className="score-badge">
-                            CONFIDENCE: {result.score}%
+                            {result.safe ? 'SAFETY' : 'RISK'}: {result.score}%
                         </div>
                     </div>
 
