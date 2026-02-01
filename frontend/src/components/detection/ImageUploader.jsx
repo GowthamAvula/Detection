@@ -37,7 +37,8 @@ export default function ImageUploader() {
 
         try {
             const base64Image = await convertToBase64(files[0]);
-            const response = await axios.post('http://localhost:5001/api/analyze-image', {
+            const apiUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:5001'
+            const response = await axios.post(`${apiUrl}/api/analyze-image`, {
                 image: base64Image
             });
 

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
 
 .learning-page {
-    background: #030305;
+    background: var(--cyber-black);
     min-height: 100vh;
-    padding: 80px 0;
+    padding: 100px 0;
     color: white;
+    position: relative;
 }
 
 .learning-header {
@@ -12,15 +13,22 @@
 }
 
 .page-title {
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 900;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
 }
 
 .text-glow {
-    color: #00f2ff;
-    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    color: var(--cyber-cyan);
+    text-shadow: 0 0 30px var(--cyber-cyan-glow);
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 800px;
 }
 
 .mono-label {
@@ -28,14 +36,22 @@
     letter-spacing: 2px;
 }
 
+/* Category Groups */
+.category-group {
+    height: 100%;
+}
+
 /* Adaptive Card UI */
 .learning-card {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--cyber-border);
     border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .learning-card::before {
@@ -45,21 +61,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(0, 242, 255, 0.03), transparent);
+    background: radial-gradient(circle at top right, rgba(0, 242, 255, 0.05), transparent);
     pointer-events: none;
 }
 
 .learning-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(0, 242, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .module-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 800;
     color: white;
+    letter-spacing: -0.5px;
 }
 
 /* Accordion Customization */
@@ -67,36 +84,34 @@
     border: none !important;
     background: transparent !important;
     padding: 0 !important;
+    margin-bottom: 10px;
 }
 
 .inner-control {
-    padding: 0 !important;
+    padding: 8px 0 !important;
     background: transparent !important;
 }
 
 .inner-control:hover {
     background: transparent !important;
+    color: var(--cyber-cyan) !important;
 }
 
 .inner-content {
-    background: rgba(255, 255, 255, 0.01) !important;
-    border-radius: 8px;
-    margin-top: 10px;
+    background: rgba(0, 242, 255, 0.02) !important;
+    border-radius: 12px;
+    padding: 15px !important;
+    border: 1px solid rgba(0, 242, 255, 0.05);
 }
 
 .module-cta {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Roadmap Section */
-.safety-roadmap {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
+    letter-spacing: 1.5px;
+    margin-top: auto;
+    border-radius: 12px;
 }
 
 /* Animations */
@@ -121,7 +136,7 @@
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
 
     to {
@@ -131,21 +146,22 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .page-title {
-        font-size: 32px;
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .learning-page {
+        padding: 60px 0;
     }
 
-    .learning-grid {
-        grid-template-cols: 1fr;
+    .page-title {
+        font-size: 36px;
     }
 
-    .progress-section {
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .progress-section>div:last-child {
-        width: 100% !important;
+    .learning-header {
+        margin-bottom: 40px;
     }
 }
