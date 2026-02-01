@@ -1,0 +1,184 @@
+.home-container {
+    min-height: 100vh;
+    background: #030305;
+    overflow-x: hidden;
+}
+
+.home-hero {
+    position: relative;
+    background: #030305;
+    overflow: hidden;
+}
+
+.hero-mesh {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    background-image:
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black, transparent 90%);
+}
+
+.hero-mesh::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+}
+
+.relative-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -3px;
+    color: white;
+}
+
+.text-glow {
+    color: #00f2ff;
+    text-shadow: 0 0 40px rgba(0, 242, 255, 0.6), 0 0 80px rgba(0, 242, 255, 0.2);
+}
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 800px;
+    line-height: 1.6;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px !important;
+    letter-spacing: 0.5px;
+}
+
+.premium-btn {
+    height: 60px;
+    padding: 0 40px;
+    font-size: 16px;
+    font-weight: 900;
+    background: #00f2ff !important;
+    color: #030305 !important;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.premium-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 242, 255, 0.5);
+    background: #5ef8ff !important;
+}
+
+.secondary-btn {
+    height: 60px;
+    padding: 0 40px;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Kenneth K Glass Boxes */
+.premium-box,
+.guide-box {
+    background: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-box::before,
+.guide-box::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid var(--cyber-cyan);
+    border-top: 1px solid var(--cyber-cyan);
+    opacity: 0.3;
+}
+
+.premium-box:hover,
+.guide-box:hover {
+    border-color: rgba(0, 242, 255, 0.3) !important;
+    transform: translateY(-8px);
+    background: rgba(10, 10, 15, 0.8) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 255, 0.05);
+}
+
+.read-more-btn {
+    border-color: rgba(0, 242, 255, 0.2) !important;
+    color: #00f2ff !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.read-more-btn:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    border-color: #00f2ff !important;
+}
+
+.tech-list .mantine-List-item {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.guidelines-section {
+    background: rgba(0, 242, 255, 0.02);
+    border-top: 1px solid rgba(0, 242, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.05);
+}
+
+.stat-glow {
+    position: relative;
+}
+
+.stat-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.3));
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}

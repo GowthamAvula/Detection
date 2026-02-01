@@ -1,0 +1,45 @@
+.uploader-container {
+    min-height: 300px;
+}
+
+.dropzone {
+    background: rgba(10, 10, 15, 0.5) !important;
+    border: 2px dashed rgba(0, 242, 255, 0.2) !important;
+    border-radius: 20px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+}
+
+.dropzone[data-accept] {
+    background: rgba(0, 242, 255, 0.1) !important;
+    border-color: #00f2ff !important;
+}
+
+.dropzone[data-reject] {
+    background: rgba(255, 77, 77, 0.1) !important;
+    border-color: #ff4d4d !important;
+}
+
+.dropzone:hover {
+    border-color: #00f2ff !important;
+    background: rgba(10, 10, 15, 0.8) !important;
+    box-shadow: inset 0 0 20px rgba(0, 242, 255, 0.05);
+}
+
+.upload-icon {
+    color: #00f2ff;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+}
+
+.image-preview {
+    background: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 242, 255, 0.15) !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+}
+
+.remove-btn {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 10px !important;
+}

@@ -1,0 +1,125 @@
+.scanner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.scanner-input {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    font-size: 1rem;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.scanner-input:focus {
+    border-color: #00f2ff !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2) !important;
+}
+
+.char-count {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.scan-button {
+    background: #00f2ff !important;
+    color: #030305 !important;
+    font-weight: 900 !important;
+    height: 54px !important;
+    border-radius: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3) !important;
+}
+
+.scan-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 242, 255, 0.5) !important;
+    background: #5ef8ff !important;
+}
+
+.result-box {
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(30px);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-box::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+    opacity: 0.6;
+}
+
+.result-box.safe {
+    border-color: rgba(0, 242, 255, 0.3);
+    color: #00f2ff;
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.1);
+}
+
+.result-box.danger {
+    border-color: rgba(255, 77, 77, 0.3);
+    color: #ff4d4d;
+    box-shadow: 0 0 40px rgba(255, 77, 77, 0.1);
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.score-badge {
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.analysis-list {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.analysis-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.analysis-list li {
+    padding: 10px 0;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 10px;
+}
+
+.analysis-list li::before {
+    content: '>>';
+    font-family: 'JetBrains Mono', monospace;
+    color: currentColor;
+    opacity: 0.5;
+}

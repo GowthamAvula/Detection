@@ -1,0 +1,148 @@
+.profile-container {
+    min-height: 100vh;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+/* Kenneth K Identity Cards */
+.profile-sidebar-card,
+.profile-tabs-wrapper {
+    border-radius: 20px;
+    background: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(0, 242, 255, 0.15) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-sidebar-card::before,
+.profile-tabs-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid var(--cyber-cyan);
+    border-top: 1px solid var(--cyber-cyan);
+    opacity: 0.5;
+}
+
+.avatar-wrapper {
+    position: relative;
+    padding: 10px;
+    filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.2));
+}
+
+.status-pulse {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 22px;
+    height: 22px;
+    background: #00f2ff;
+    border: 4px solid #030305;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 242, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
+    }
+}
+
+.profile-tabs .mantine-Tabs-list {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.profile-tabs .mantine-Tabs-tab {
+    color: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 12px 20px;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.profile-tabs .mantine-Tabs-tab[data-active] {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #00f2ff !important;
+}
+
+.profile-field label {
+    font-family: 'JetBrains Mono', monospace !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.profile-field input {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: white !important;
+    height: 52px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.profile-field input:focus {
+    border-color: #00f2ff !important;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2) !important;
+}
+
+.security-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.security-item:hover {
+    border-color: rgba(0, 242, 255, 0.2);
+    background: rgba(0, 242, 255, 0.02);
+}
+
+.terminate-btn {
+    background: #ff4d4d !important;
+    color: white !important;
+    font-weight: 800 !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.2) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.authorize-btn {
+    background: #00f2ff !important;
+    color: #030305 !important;
+    font-weight: 900 !important;
+}
+
+@media (max-width: 768px) {
+    .profile-sidebar-card {
+        margin-bottom: 24px;
+    }
+}

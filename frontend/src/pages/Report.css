@@ -1,0 +1,64 @@
+.report-page {
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.report-card {
+    background: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(0, 242, 255, 0.15) !important;
+    border-radius: 20px !important;
+    padding: 3.5rem !important;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.report-input {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: white !important;
+    border-radius: 12px !important;
+}
+
+.report-input:focus {
+    border-color: #00f2ff !important;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1) !important;
+}
+
+.input-label {
+    font-family: 'JetBrains Mono', monospace !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 10px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px !important;
+}
+
+.submit-button {
+    background: #00f2ff !important;
+    color: #030305 !important;
+    font-weight: 900 !important;
+    height: 60px !important;
+    border-radius: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-card {
+    background: rgba(0, 242, 255, 0.03) !important;
+    border: 1px solid rgba(0, 242, 255, 0.1) !important;
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+}
+
+.info-card .mono-label {
+    font-size: 10px;
+}

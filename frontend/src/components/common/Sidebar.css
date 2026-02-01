@@ -1,0 +1,115 @@
+.sidebar {
+    width: 80px;
+    height: 95vh;
+    margin: 2.5vh 0 2.5vh 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    background: rgba(10, 10, 15, 0.8) !important;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    border-radius: 20px;
+}
+
+.sidebar-logo {
+    margin-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+}
+
+.sidebar-content {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: auto;
+}
+
+.sidebar-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.sidebar-link:hover {
+    color: #00f2ff;
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.sidebar-link.active {
+    background-color: #00f2ff;
+    color: #030305;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+/* Tooltip Polish */
+.mantine-Tooltip-tooltip {
+    background-color: #1a1b23 !important;
+    border: 1px solid rgba(0, 242, 255, 0.2) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Premium Profile Menu */
+.profile-menu-dropdown {
+    background: rgba(10, 10, 15, 0.95) !important;
+    border: 1px solid rgba(0, 242, 255, 0.2) !important;
+    backdrop-filter: blur(40px);
+    border-radius: 14px !important;
+    padding: 6px !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+}
+
+.profile-menu-dropdown .mantine-Menu-header {
+    margin-bottom: 5px;
+}
+
+.profile-menu-dropdown .mantine-Menu-item {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+}
+
+.profile-menu-dropdown .mantine-Menu-item:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #00f2ff !important;
+    transform: translateX(4px);
+}
+
+.profile-menu-dropdown .mantine-Menu-label {
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 10px 14px 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}

@@ -1,0 +1,193 @@
+.demo-page {
+    min-height: 100vh;
+    background: #030305;
+    position: relative;
+    overflow-x: hidden;
+    color: white;
+}
+
+.demo-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    background-image:
+        linear-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.glow-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.1;
+}
+
+.orb-1 {
+    top: -100px;
+    right: -100px;
+    background: #00f2ff;
+    animation: orbFloat 20s infinite alternate;
+}
+
+.orb-2 {
+    bottom: -100px;
+    left: -100px;
+    background: #bc13fe;
+    animation: orbFloat 25s infinite alternate-reverse;
+}
+
+@keyframes orbFloat {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(100px, 100px) scale(1.2);
+    }
+}
+
+.demo-hero-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -3px;
+    margin: 20px 0;
+}
+
+.demo-description {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px !important;
+    letter-spacing: 0.5px;
+}
+
+.demo-auth-btn {
+    height: 64px;
+    padding: 0 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00f2ff 0%, #00b4ff 100%);
+    color: #030305;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 40px rgba(0, 242, 255, 0.3);
+}
+
+.demo-auth-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 242, 255, 0.5);
+    background: linear-gradient(135deg, #5ef8ff 0%, #00d2ff 100%);
+}
+
+.feature-demo-card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 32px !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-demo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.feature-demo-card:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(0, 242, 255, 0.2) !important;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.feature-demo-card:hover::before {
+    opacity: 1;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-preview-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+}
+
+.feature-access-btn {
+    height: 50px;
+    border-radius: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.feature-access-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.section-label {
+    letter-spacing: 4px;
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.deco-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.deco-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(0, 242, 255, 0.2);
+    border-radius: 50%;
+}
+
+.animate-shine {
+    background: linear-gradient(to right, white 20%, #00f2ff 40%, #00f2ff 60%, white 80%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}

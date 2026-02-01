@@ -1,0 +1,133 @@
+/* Dashboard.css - Kenneth K Cybersecurity Theme */
+.dashboard-container {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+/* Action Cards */
+.action-card {
+    border-radius: 20px !important;
+    padding: 1.8rem !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.action-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.card-purple {
+    background: rgba(188, 19, 254, 0.05) !important;
+    border-left: 4px solid var(--cyber-purple) !important;
+}
+
+.card-purple:hover {
+    box-shadow: 0 0 30px rgba(188, 19, 254, 0.1);
+    background: rgba(188, 19, 254, 0.08) !important;
+}
+
+.card-red {
+    background: rgba(255, 77, 77, 0.05) !important;
+    border-left: 4px solid #ff4d4d !important;
+}
+
+.card-red:hover {
+    box-shadow: 0 0 30px rgba(255, 77, 77, 0.1);
+    background: rgba(255, 77, 77, 0.08) !important;
+}
+
+.card-green {
+    background: rgba(0, 242, 255, 0.05) !important;
+    border-left: 4px solid var(--cyber-cyan) !important;
+}
+
+.card-green:hover {
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+    background: rgba(0, 242, 255, 0.08) !important;
+}
+
+/* Glass Cards (Cyber Cards) */
+.glass-card {
+    background: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(0, 242, 255, 0.15) !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid var(--cyber-cyan);
+    border-top: 1px solid var(--cyber-cyan);
+    opacity: 0.5;
+}
+
+/* Chart Bars */
+.chart-bar-v {
+    border-radius: 4px 4px 2px 2px !important;
+    transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.safety-ring {
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+}
+
+.score-highlight {
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(188, 19, 254, 0.05)) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem !important;
+    border: 1px solid rgba(0, 242, 255, 0.3) !important;
+}
+
+/* List Items */
+.recent-item {
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.2s ease;
+}
+
+.recent-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 242, 255, 0.2);
+    transform: translateX(5px);
+}
