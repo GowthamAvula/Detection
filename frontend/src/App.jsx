@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { supabase } from './lib/supabaseClient'
 import Sidebar from './components/common/Sidebar'
-// import Footer from './components/common/Footer' // Footer removed for dashboard layout
+import LandingHeader from './components/common/LandingHeader'
 import Detection from './pages/Detection'
 import URLChecker from './pages/URLChecker'
 import EmailAnalyzer from './pages/EmailAnalyzer'
@@ -17,6 +17,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import AuthGuard from './components/common/AuthGuard'
 import Demo from './pages/Demo'
+import About from './pages/About'
 
 function App() {
     const location = useLocation();
@@ -35,16 +36,22 @@ function App() {
     }, []);
 
     const isLoginPage = location.pathname === '/login';
+    const isLandingPage = location.pathname === '/' || location.pathname === '/about';
     const isDemoMode = sessionStorage.getItem('demoMode') === 'true';
-    // Show sidebar if NOT on login page AND (either logged in OR in demo mode OR not on landing page)
-    const showSidebar = !isLoginPage && (user || isDemoMode || location.pathname !== '/');
+
+    // Show sidebar if NOT on login/landing page AND (either logged in OR in demo mode)
+    const showSidebar = !isLoginPage && !isLandingPage && (user || isDemoMode);
+    // Show top header ONLY on landing/about pages
+    const showLandingHeader = isLandingPage;
 
     return (
         <div className="app">
+            {showLandingHeader && <LandingHeader />}
             {showSidebar && <Sidebar />}
             <main className={showSidebar ? "main-content" : "full-content"}>
                 <Routes>
                     <Route path="/" element={<Demo />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/profile" element={<AuthGuard><Profile /></AuthGuard>} />
                     <Route path="/detection" element={<AuthGuard><Detection /></AuthGuard>} />

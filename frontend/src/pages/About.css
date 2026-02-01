@@ -1,0 +1,67 @@
+.about-page {
+    background: var(--cyber-black);
+    min-height: 100vh;
+    padding: 100px 0;
+    color: white;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.about-header {
+    margin-bottom: 60px;
+}
+
+.about-title {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+
+.text-glow {
+    color: var(--cyber-cyan);
+    text-shadow: 0 0 40px var(--cyber-cyan-glow);
+}
+
+.about-subtitle {
+    line-height: 1.8;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--cyber-border);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--cyber-cyan);
+    transform: translateY(-5px);
+}
+
+.tech-stack-card {
+    background: var(--cyber-glass);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid var(--cyber-border);
+    position: relative;
+}
+
+.tech-stack-card::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: var(--cyber-cyan);
+    filter: blur(80px);
+    opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 42px;
+    }
+}

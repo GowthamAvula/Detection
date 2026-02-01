@@ -88,7 +88,7 @@ export default function Demo() {
                 <div className="glow-orb orb-2"></div>
             </div>
 
-            <Container size="xl" py={100}>
+            <Container size="xl" py={120}>
                 {/* Hero section */}
                 <Stack align="center" gap="lg" mb={100}>
                     <motion.div
