@@ -1,5 +1,5 @@
 import { Container, Title, Text, SimpleGrid, Paper, Stack, Group, ThemeIcon, Divider, Box } from '@mantine/core'
-import { IconShieldCheck, IconSearch, IconUsers, IconBook, IconTrophy, IconRobot, IconLock, IconGlobe } from '@tabler/icons-react'
+import { IconShieldCheck, IconSearch, IconUsers, IconBook, IconTrophy, IconRobot, IconLock, IconGlobe, IconFingerprint } from '@tabler/icons-react'
 import { motion } from 'framer-motion'
 import './About.css'
 
