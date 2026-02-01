@@ -71,8 +71,10 @@ export default function Demo() {
         }
     ];
 
+    const hasAccess = user || isDemo;
+
     const handleAccess = (to) => {
-        if (user) {
+        if (hasAccess) {
             navigate(to);
         } else {
             navigate('/login', { state: { from: to } });
