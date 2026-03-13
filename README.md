@@ -74,6 +74,3 @@ cd frontend
 npm run build
 ```
 
-## 📄 License
-
-Educational Use Only - Hackathon Prototype
